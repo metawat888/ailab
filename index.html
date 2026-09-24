@@ -145,17 +145,19 @@
             animation: shoot var(--duration) linear infinite;
             opacity: 0;
         }
+        /* ปรับสัดส่วนและขนาดความสูงของกล่อง Canva ให้พอดีตา ไม่ใหญ่หรือยาวจนเกินไป */
         .canva-wrapper {
             position: relative;
             width: 100%;
+            max-width: 900px; /* จำกัดความกว้างไม่ให้ยืดเต็มจอเกินไป ดูสวยงามเป็นระเบียบ */
+            margin-left: auto;
+            margin-right: auto;
             height: 0;
-            padding-top: 56.2225%;
-            padding-bottom: 0;
-            box-shadow: 0 2px 8px 0 rgba(63,69,81,0.16);
-            margin-top: 0;
-            margin-bottom: 0;
+            padding-top: 45%; /* ปรับสัดส่วนความสูงให้ลดลงจากเดิมเล็กน้อย (จาก 56.22% เป็น 45%) เพื่อให้ขนาดกะทัดรัดขึ้น */
+            box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
+            margin-bottom: 0.9em;
             overflow: hidden;
-            border-radius: 8px;
+            border-radius: 12px;
             will-change: transform;
         }
     </style>
@@ -199,12 +201,24 @@
 
     <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
         
-        <!-- Canva Presentation Embed at the Top (Full Width) -->
-        <div class="mb-12 w-full bg-white p-4 sm:p-6 rounded-3xl shadow-lg border border-slate-200">
+        <!-- Canva Presentation Embed at the Top with adjusted size -->
+        <div class="mb-12 w-full bg-white p-4 sm:p-8 rounded-3xl shadow-xl border border-slate-200">
+            <div class="text-center mb-6">
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 tracking-wide flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-microchip text-yellow-500"></i> ปฏิบัติการทดลองเสมือนจริงผ่านอุปกรณ์อิเล็กทรอนิกส์อัจฉริยะ (Ai Lab)
+                </h2>
+                <p class="text-sm sm:text-base font-medium text-emerald-600 mt-1">
+                    <i class="fa-solid fa-globe mr-1"></i> Ai Lab : Any Time Any Where ทุกที่ ทุกเวลา สามารถเรียนรู้ได้
+                </p>
+                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded-full"></div>
+            </div>
             <div class="canva-wrapper">
               <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
                 src="https://www.canva.com/design/DAHWGTTWrJw/RGZuHmypFQ9uimg1ZbLXMA/view?embed&controls=0" allowfullscreen="allowfullscreen" allow="fullscreen">
               </iframe>
+            </div>
+            <div class="text-center text-sm md:text-base font-medium text-slate-700 mt-4">
+                <a href="https://www.canva.com/design/DAHWGTTWrJw/RGZuHmypFQ9uimg1ZbLXMA/view?utm_content=DAHWGTTWrJw&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link" target="_blank" rel="noopener" class="text-blue-600 hover:underline">ยินดีต้อนรับสู่ ห้องเรียนวิทยาศาสตร์ ระดับชั้นมัธยมศึกษา ตอนต้น</a> โดย Mr.Metawat Phongsaphang
             </div>
         </div>
 
