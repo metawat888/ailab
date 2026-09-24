@@ -18,47 +18,38 @@
     <meta property="og:description" content="แหล่งรวมสื่อการเรียนรู้ นวัตกรรมการสอน และเว็บแอปพลิเคชันจำลองทางวิทยาศาสตร์">
     <meta property="og:image" content="https://ailab-henna.vercel.app/image-cover.jpg">
 
-    <!-- Twitter / X Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ai Lab Dashboard - Muangphayalae Wittaya School">
-    <meta name="twitter:description" content="แหล่งรวมสื่อการเรียนรู้ นวัตกรรมการสอน และเว็บแอปพลิเคชันจำลองทางวิทยาศาสตร์">
-    <meta name="twitter:image" content="https://ailab-henna.vercel.app/image-cover.jpg">
-
     <title>Ai Lab Dashboard - Muangphayalae Wittaya School</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         body {
             font-family: 'Kanit', sans-serif;
-            background-color: #f8fafc; /* พื้นหลังสว่าง สะอาดตา */
+            background-color: #f8fafc;
         }
-        /* Custom scrollbar เพื่อความสวยงาม */
         ::-webkit-scrollbar {
-            width: 8px;
+            width: 6px;
         }
         ::-webkit-scrollbar-track {
             background: #f1f1f1;
         }
         ::-webkit-scrollbar-thumb {
             background: #cbd5e1;
-            border-radius: 4px;
+            border-radius: 3px;
         }
         ::-webkit-scrollbar-thumb:hover {
             background: #94a3b8;
         }
     </style>
 </head>
-<body class="flex flex-col min-h-screen text-slate-800 selection:bg-yellow-400 selection:text-black relative overflow-x-hidden">
+<body class="flex flex-col min-h-screen text-slate-800 selection:bg-yellow-400 selection:text-black relative overflow-x-hidden text-xs sm:text-sm">
 
-    <!-- Background Animation Canvas / Elements -->
     <div id="stars-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden bg-slate-900/5"></div>
     <div id="snow-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
     <div id="shooting-stars-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
     
-    <!-- Dynamic Aurora / Rainbow Light Effect Container with enhanced continuous movement -->
-    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-40 blur-[120px]">
+    <div class="fixed inset-0 pointer-events-none z-0 overflow-hidden opacity-30 blur-[100px]">
         <div class="absolute -top-[50%] -left-[30%] w-[90vw] h-[90vw] rounded-full bg-gradient-to-r from-emerald-400 via-teal-500 to-cyan-400 aurora-blob-1"></div>
         <div class="absolute top-[10%] -right-[30%] w-[80vw] h-[80vw] rounded-full bg-gradient-to-r from-blue-500 via-indigo-500 to-fuchsia-500 aurora-blob-2"></div>
         <div class="absolute -bottom-[40%] left-[5%] w-[100vw] h-[100vw] rounded-full bg-gradient-to-r from-pink-500 via-rose-400 to-amber-400 aurora-blob-3"></div>
@@ -66,7 +57,6 @@
     </div>
 
     <style>
-        /* CSS for twinkling stars, falling snow, shooting stars, and continuous Aurora Rainbow effect */
         @keyframes twinkle {
             0%, 100% { opacity: 0.2; transform: scale(0.8); }
             50% { opacity: 1; transform: scale(1.2); }
@@ -78,14 +68,8 @@
             100% { transform: translateY(105vh) translateX(20px); opacity: 0; }
         }
         @keyframes shoot {
-            0% {
-                transform: translateX(0) translateY(0) rotate(-45deg);
-                opacity: 1;
-            }
-            100% {
-                transform: translateX(-400px) translateY(400px) rotate(-45deg);
-                opacity: 0;
-            }
+            0% { transform: translateX(0) translateY(0) rotate(-45deg); opacity: 1; }
+            100% { transform: translateX(-400px) translateY(400px) rotate(-45deg); opacity: 0; }
         }
         @keyframes auroraMove1 {
             0% { transform: translate(0px, 0px) scale(1) rotate(0deg); }
@@ -114,109 +98,69 @@
             100% { transform: translate(0px, 0px) scale(0.9) rotate(-360deg); }
         }
         
-        .aurora-blob-1 {
-            animation: auroraMove1 14s infinite ease-in-out alternate;
-        }
-        .aurora-blob-2 {
-            animation: auroraMove2 18s infinite ease-in-out alternate;
-        }
-        .aurora-blob-3 {
-            animation: auroraMove3 16s infinite ease-in-out alternate;
-        }
-        .aurora-blob-4 {
-            animation: auroraMove4 20s infinite ease-in-out alternate;
-        }
-        .star {
-            position: absolute;
-            background-color: #fbbf24;
-            border-radius: 50%;
-            animation: twinkle var(--duration) infinite ease-in-out;
-        }
-        .snowflake {
-            position: absolute;
-            background-color: rgba(200, 210, 220, 0.5);
-            border-radius: 50%;
-            animation: snowfall var(--duration) linear infinite;
-        }
+        .aurora-blob-1 { animation: auroraMove1 14s infinite ease-in-out alternate; }
+        .aurora-blob-2 { animation: auroraMove2 18s infinite ease-in-out alternate; }
+        .aurora-blob-3 { animation: auroraMove3 16s infinite ease-in-out alternate; }
+        .aurora-blob-4 { animation: auroraMove4 20s infinite ease-in-out alternate; }
+        .star { position: absolute; background-color: #fbbf24; border-radius: 50%; animation: twinkle var(--duration) infinite ease-in-out; }
+        .snowflake { position: absolute; background-color: rgba(200, 210, 220, 0.5); border-radius: 50%; animation: snowfall var(--duration) linear infinite; }
         .shooting-star {
-            position: absolute;
-            width: 120px;
-            height: 2px;
+            position: absolute; width: 100px; height: 2px;
             background: linear-gradient(to left, rgba(150, 150, 255, 0.8), rgba(251, 191, 36, 0));
-            border-radius: 50%;
-            animation: shoot var(--duration) linear infinite;
-            opacity: 0;
+            border-radius: 50%; animation: shoot var(--duration) linear infinite; opacity: 0;
         }
-        /* ปรับสัดส่วนและขนาดความสูงของกล่อง Canva ให้เต็มพื้นที่ซ้ายขวา */
         .canva-wrapper {
-            position: relative;
-            width: 100%;
-            max-width: 100%; /* ปรับให้ขยายเต็มพื้นที่ ไม่จำกัด 900px แล้ว */
-            margin-left: auto;
-            margin-right: auto;
-            height: 0;
-            padding-top: 56.25%; /* ใช้สัดส่วน 16:9 เพื่อให้งานนำเสนอแสดงผลได้สมส่วนพอดี */
-            box-shadow: 0 4px 20px 0 rgba(0,0,0,0.08);
-            margin-bottom: 0.9em;
-            overflow: hidden;
-            border-radius: 12px;
-            will-change: transform;
+            position: relative; width: 100%; max-width: 100%;
+            margin-left: auto; margin-right: auto; height: 0; padding-top: 45%;
+            box-shadow: 0 4px 15px 0 rgba(0,0,0,0.06); margin-bottom: 0.5rem; overflow: hidden; border-radius: 10px;
         }
     </style>
 
-    <header class="bg-slate-900 border-b-[6px] border-yellow-500 shadow-xl relative z-10">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6">
-            <div class="flex items-center justify-between gap-4">
-                
-                <!-- โรงเรียน (อยู่ซ้าย) -->
-                <div class="flex items-center gap-3 sm:gap-5 text-white min-w-0">
-                    <div class="flex-shrink-0 w-12 h-12 sm:w-16 sm:h-16 bg-slate-800 rounded-2xl flex items-center justify-center border border-slate-700 shadow-inner">
-                        <i class="fa-solid fa-graduation-cap text-2xl sm:text-3xl text-yellow-500"></i>
+    <header class="bg-slate-900 border-b-4 border-yellow-500 shadow-md relative z-10 py-3">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6">
+            <div class="flex items-center justify-between gap-3">
+                <div class="flex items-center gap-2 sm:gap-4 text-white min-w-0">
+                    <div class="flex-shrink-0 w-10 h-10 sm:w-12 sm:h-12 bg-slate-800 rounded-xl flex items-center justify-center border border-slate-700 shadow-inner">
+                        <i class="fa-solid fa-graduation-cap text-xl sm:text-2xl text-yellow-500"></i>
                     </div>
                     <div class="text-left min-w-0">
-                        <h1 class="text-sm sm:text-xl md:text-2xl lg:text-3xl font-bold tracking-wide text-white drop-shadow-sm truncate">MUANGPHAYALAE WITTAYA SCHOOL</h1>
-                        <p class="text-[9px] sm:text-[11px] md:text-xs text-slate-400 font-light tracking-widest mt-0.5 sm:mt-1 truncate">CHAIYAPHUM SECONDARY EDUCATIONAL SERVICE AREA OFFICE</p>
+                        <h1 class="text-xs sm:text-base md:text-lg font-bold tracking-wide text-white drop-shadow-sm truncate">MUANGPHAYALAE WITTAYA SCHOOL</h1>
+                        <p class="text-[7px] sm:text-[9px] text-slate-400 font-light tracking-widest mt-0.5 truncate">CHAIYAPHUM SECONDARY EDUCATIONAL SERVICE AREA OFFICE</p>
                     </div>
                 </div>
 
-                <!-- โลโก้ Ai Lab & ผู้พัฒนา (อยู่ขวา บนแนวเดียวกัน) -->
-                <div class="flex items-center gap-2 sm:gap-4 bg-slate-800/50 p-2 sm:p-2.5 rounded-2xl border border-slate-700 backdrop-blur-sm flex-shrink-0">
-                    <img src="https://github.com/metawat888/Picture/raw/main/logo%20จริง%202.png?raw=true" alt="Ai Lab Logo" class="h-10 sm:h-14 w-auto object-contain drop-shadow-lg" onerror="this.src='https://github.com/metawat888/Picture/raw/main/logo%20จริง%202.png?raw=true'">
-                    
-                    <div class="hidden sm:block w-px h-10 bg-slate-600 mx-1"></div>
-                    
-                    <div class="flex items-center gap-2 sm:gap-3 px-1 sm:px-2">
+                <div class="flex items-center gap-2 bg-slate-800/50 px-2 py-1.5 rounded-xl border border-slate-700 backdrop-blur-sm flex-shrink-0">
+                    <img src="https://github.com/metawat888/Picture/raw/main/logo%20จริง%202.png?raw=true" alt="Ai Lab Logo" class="h-7 sm:h-9 w-auto object-contain drop-shadow-lg">
+                    <div class="hidden sm:block w-px h-8 bg-slate-600 mx-1"></div>
+                    <div class="flex items-center gap-2 px-1">
                         <div class="text-right hidden md:block">
-                            <p class="text-[10px] text-slate-400 uppercase tracking-wider">พัฒนาโดย</p>
-                            <p class="text-xs sm:text-sm font-medium text-yellow-400 whitespace-nowrap">นายเมธาวัฒน์ พงสะพัง</p>
+                            <p class="text-[9px] text-slate-400 uppercase tracking-wider">พัฒนาโดย</p>
+                            <p class="text-xs font-medium text-yellow-400 whitespace-nowrap">นายเมธาวัฒน์ พงสะพัง</p>
                         </div>
                         <div class="relative flex-shrink-0">
-                            <img src="https://github.com/metawat888/Picture/raw/69f9d3a46e017adc43abb8db3503ea8106ecae61/97488303_2887790847941184_353651305119481856_n.jpg" alt="Profile" class="w-9 h-9 sm:w-11 sm:h-11 rounded-full object-cover border-2 border-yellow-500 shadow-md">
-                            <div class="absolute -bottom-1 -right-1 w-3.5 h-3.5 sm:w-4 sm:h-4 bg-green-500 rounded-full border-2 border-slate-900"></div>
+                            <img src="https://github.com/metawat888/Picture/raw/69f9d3a46e017adc43abb8db3503ea8106ecae61/97488303_2887790847941184_353651305119481856_n.jpg" alt="Profile" class="w-8 h-8 rounded-full object-cover border-2 border-yellow-500 shadow-sm">
+                            <div class="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-green-500 rounded-full border-2 border-slate-900"></div>
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </header>
 
-    <main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 relative z-10">
+    <main class="flex-grow w-full max-w-7xl mx-auto px-3 sm:px-6 py-4 relative z-10">
         
-        <!-- Canva Presentation Embed at the Top with adjusted size -->
-        <div class="mb-12 w-full bg-white p-4 sm:p-8 rounded-3xl shadow-xl border border-slate-200">
-            <div class="text-center mb-6">
-                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-slate-800 tracking-wide flex flex-col items-center justify-center gap-1 text-center">
-                    <div class="flex items-center gap-2">
-                        <i class="fa-solid fa-microchip text-yellow-500"></i>
-                        <span>ปฏิบัติการทดลองเสมือนจริง</span>
-                    </div>
+        <!-- Compact Embed Container -->
+        <div class="mb-6 w-full bg-white p-3 sm:p-5 rounded-2xl shadow-md border border-slate-200">
+            <div class="text-center mb-3">
+                <h2 class="text-sm sm:text-lg font-bold text-slate-800 tracking-wide flex flex-wrap items-center justify-center gap-1 text-center">
+                    <span class="inline-flex items-center gap-1 text-yellow-600"><i class="fa-solid fa-microchip"></i> ปฏิบัติการทดลองเสมือนจริง</span>
                     <span>ผ่านอุปกรณ์อิเล็กทรอนิกส์อัจฉริยะ (Ai Lab)</span>
                 </h2>
-                <p class="text-sm sm:text-base font-medium text-emerald-600 mt-2">
-                    <i class="fa-solid fa-globe mr-1"></i> Ai Lab : Any Time Any Where ทุกที่ ทุกเวลา สามารถเรียนรู้ได้
-                </p>
-                <div class="w-24 h-1 bg-yellow-500 mx-auto mt-3 rounded-full"></div>
+                <div class="mt-2 inline-flex flex-row items-center gap-3 bg-emerald-50 border border-emerald-200 px-4 py-1.5 rounded-xl shadow-xs text-[11px] sm:text-xs">
+                    <span class="font-semibold text-emerald-700"><i class="fa-solid fa-globe mr-1 text-emerald-500"></i> Ai Lab : Any Time Any Where</span>
+                    <span class="text-slate-300">|</span>
+                    <span class="font-medium text-emerald-600">ทุกที่ ทุกเวลา สามารถเรียนรู้ได้</span>
+                </div>
             </div>
             <div class="canva-wrapper">
               <iframe loading="lazy" style="position: absolute; width: 100%; height: 100%; top: 0; left: 0; border: none; padding: 0; margin: 0;"
@@ -225,748 +169,602 @@
             </div>
         </div>
 
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mb-10">
+        <!-- Labs Grid: Compact UI cards -->
+        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-4 mb-6">
             
             <!-- Lab 1 -->
-            <a href="https://ailab01.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-emerald-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-emerald-900 to-slate-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-seedling text-5xl mb-3 text-emerald-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-emerald-200 font-medium">MENDEL'S LAB</span>
-                    </div>
+            <a href="https://ailab01.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-emerald-900 to-slate-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-seedling text-2xl sm:text-3xl text-emerald-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-emerald-200 font-medium">LAB 01</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors leading-tight">Lab 01 : การทดลองพันธุศาสตร์ของเมนเดล</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Mendel's Lab</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors line-clamp-1">เมนเดล</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Mendel's Lab</p>
                 </div>
             </a>
 
             <!-- Lab 2 -->
-            <a href="https://ailab02.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-pink-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-pink-900 to-rose-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-dna text-5xl mb-3 text-pink-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-pink-200 font-medium">DNA & GENE</span>
-                    </div>
+            <a href="https://ailab02.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-pink-900 to-rose-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-dna text-2xl sm:text-3xl text-pink-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-pink-200 font-medium">LAB 02</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-pink-600 transition-colors leading-tight">Lab 02 : โครโมโซม ดีเอ็นเอ ยีน</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Chromosome DNA Gene</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-pink-600 transition-colors line-clamp-1">ดีเอ็นเอ ยีน</h3>
+                    <p class="text-[9px] text-slate-400 truncate">DNA & Gene</p>
                 </div>
             </a>
 
             <!-- Lab 3 -->
-            <a href="https://ailab03.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-blue-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-blue-900 to-indigo-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-venus-mars text-5xl mb-3 text-blue-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-blue-200 font-medium">TRAITS</span>
-                    </div>
+            <a href="https://ailab03.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-blue-900 to-indigo-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-venus-mars text-2xl sm:text-3xl text-blue-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-blue-200 font-medium">LAB 03</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors leading-tight">Lab 03 : จีโนไทป์และฟีโนไทป์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Genotype and Phenotype</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1">จีโนไทป์</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Genotype</p>
                 </div>
             </a>
 
             <!-- Lab 4 -->
-            <a href="https://ailab04.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-orange-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-orange-800 to-amber-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-users text-5xl mb-3 text-orange-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-orange-200 font-medium">HUMAN</span>
-                    </div>
+            <a href="https://ailab04.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-orange-800 to-amber-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-users text-2xl sm:text-3xl text-orange-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-orange-200 font-medium">LAB 04</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-orange-600 transition-colors leading-tight">Lab 04 : พันธุกรรมในมนุษย์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Genetics Human</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-orange-600 transition-colors line-clamp-1">พันธุกรรมมนุษย์</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Human Genetics</p>
                 </div>
             </a>
 
             <!-- Lab 5 -->
-            <a href="https://ailab05.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-teal-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-teal-800 to-cyan-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-circle-nodes text-5xl mb-3 text-teal-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-teal-200 font-medium">MITOSIS</span>
-                    </div>
+            <a href="https://ailab05.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-teal-800 to-cyan-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-circle-nodes text-2xl sm:text-3xl text-teal-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-teal-200 font-medium">LAB 05</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-teal-600 transition-colors leading-tight">Lab 05 : การแบ่งเซลล์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Cell Division</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-teal-600 transition-colors line-clamp-1">การแบ่งเซลล์</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Cell Division</p>
                 </div>
             </a>
 
             <!-- Lab 6 -->
-            <a href="https://ailab06.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-gray-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-gray-700 to-gray-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-magnifying-glass-chart text-5xl mb-3 text-gray-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-gray-200 font-medium">ANALYSIS</span>
-                    </div>
+            <a href="https://ailab06.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-gray-700 to-gray-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-magnifying-glass-chart text-2xl sm:text-3xl text-gray-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-gray-200 font-medium">LAB 06</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-gray-700 transition-colors leading-tight">Lab 06 : ระบบวิเคราะห์โครโมโซม</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Chromosome Analysis</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-gray-700 transition-colors line-clamp-1">วิเคราะห์โครโมโซม</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Analysis</p>
                 </div>
             </a>
 
             <!-- Lab 7 -->
-            <a href="https://ailab07.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-cyan-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-cyan-900 to-sky-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-microscope text-5xl mb-3 text-cyan-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-cyan-200 font-medium">ENGINEERING</span>
-                    </div>
+            <a href="https://ailab07.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-cyan-900 to-sky-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-microscope text-2xl sm:text-3xl text-cyan-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-cyan-200 font-medium">LAB 07</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-cyan-600 transition-colors leading-tight">Lab 07 : พันธุวิศวกรรม</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Genetic Engineering</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-cyan-600 transition-colors line-clamp-1">พันธุวิศวกรรม</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Genetic Eng.</p>
                 </div>
             </a>
 
             <!-- Lab 8 -->
-            <a href="https://ailab08.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-slate-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-slate-700 to-slate-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-sitemap text-5xl mb-3 text-slate-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-slate-200 font-medium">FAMILY TREE</span>
-                    </div>
+            <a href="https://ailab08.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-slate-700 to-slate-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-sitemap text-2xl sm:text-3xl text-slate-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-slate-200 font-medium">LAB 08</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-slate-700 transition-colors leading-tight">Lab 08 : แผนผังเครือญาติทางพันธุกรรม</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Pedigree Builder</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-slate-700 transition-colors line-clamp-1">แผนผังเครือญาติ</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Pedigree</p>
                 </div>
             </a>
 
             <!-- Lab 9 -->
-            <a href="https://ailab09.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-amber-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-amber-700 to-orange-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-bolt text-5xl mb-3 text-amber-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-amber-200 font-medium">V = IR</span>
-                    </div>
+            <a href="https://ailab09.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-amber-700 to-orange-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-bolt text-2xl sm:text-3xl text-amber-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-amber-200 font-medium">LAB 09</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-amber-600 transition-colors leading-tight">Lab 09 : กฎของโอห์ม</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Ohm's Law</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-amber-600 transition-colors line-clamp-1">กฎของโอห์ม</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Ohm's Law</p>
                 </div>
             </a>
 
             <!-- Lab 10 -->
-            <a href="https://ailab10.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-red-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-red-800 to-rose-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-gauge-high text-5xl mb-3 text-red-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-red-200 font-medium">METERS</span>
-                    </div>
+            <a href="https://ailab10.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-red-800 to-rose-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-gauge-high text-2xl sm:text-3xl text-red-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-red-200 font-medium">LAB 10</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-red-600 transition-colors leading-tight">Lab 10 : แอมมิเตอร์ โวลต์มิเตอร์ โอห์มมิเตอร์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Ammeter Voltmeter Ohmmeter</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-red-600 transition-colors line-clamp-1">เครื่องวัดไฟฟ้า</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Meters</p>
                 </div>
             </a>
 
             <!-- Lab 11 -->
-            <a href="https://ailab11.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-indigo-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-indigo-800 to-violet-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-wave-square text-5xl mb-3 text-indigo-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-indigo-200 font-medium">RESISTANCE</span>
-                    </div>
+            <a href="https://ailab11.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-indigo-800 to-violet-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-wave-square text-2xl sm:text-3xl text-indigo-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-indigo-200 font-medium">LAB 11</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors leading-tight">Lab 11 : วงจรตัวต้านทานแบบอนุกรมและแบบขนาน</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Resistor</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors line-clamp-1">วงจรตัวต้านทาน</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Resistor</p>
                 </div>
             </a>
 
             <!-- Lab 12 -->
-            <a href="https://ailab12.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-sky-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-sky-800 to-blue-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-plug text-5xl mb-3 text-sky-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-sky-200 font-medium">AC POWER</span>
-                    </div>
+            <a href="https://ailab12.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-sky-800 to-blue-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-plug text-2xl sm:text-3xl text-sky-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-sky-200 font-medium">LAB 12</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-sky-600 transition-colors leading-tight">Lab 12 : วงจรไฟฟ้า AC 220 V</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">AC Circuit Sandbox</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-sky-600 transition-colors line-clamp-1">วงจรไฟฟ้า AC</h3>
+                    <p class="text-[9px] text-slate-400 truncate">AC Circuit</p>
                 </div>
             </a>
 
             <!-- Lab 13 -->
-            <a href="https://ailab13.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-green-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-green-800 to-emerald-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-calculator text-5xl mb-3 text-green-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-green-200 font-medium">SMART CALC</span>
-                    </div>
+            <a href="https://ailab13.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-green-800 to-emerald-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-calculator text-2xl sm:text-3xl text-green-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-green-200 font-medium">LAB 13</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-green-600 transition-colors leading-tight">Lab 13 : เครื่องคำนวณพลังงานไฟฟ้าอัจฉริยะ</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Power Cal Pro</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-green-600 transition-colors line-clamp-1">คำนวณพลังงาน</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Power Cal</p>
                 </div>
             </a>
 
             <!-- Lab 14 -->
-            <a href="https://ailab14.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-lime-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-lime-700 to-green-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-battery-full text-5xl mb-3 text-lime-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-lime-200 font-medium">DC POWER</span>
-                    </div>
+            <a href="https://ailab14.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-lime-700 to-green-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-battery-full text-2xl sm:text-3xl text-lime-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-lime-200 font-medium">LAB 14</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-lime-600 transition-colors leading-tight">Lab 14 : วงจรไฟฟ้า DC</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">DC Circuit Sandbox</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-lime-600 transition-colors line-clamp-1">วงจรไฟฟ้า DC</h3>
+                    <p class="text-[9px] text-slate-400 truncate">DC Circuit</p>
                 </div>
             </a>
 
             <!-- Lab 15 -->
-            <a href="https://ailab15.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-violet-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-violet-800 to-purple-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-microchip text-5xl mb-3 text-violet-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-violet-200 font-medium">PCB</span>
-                    </div>
+            <a href="https://ailab15.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-violet-800 to-purple-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-microchip text-2xl sm:text-3xl text-violet-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-violet-200 font-medium">LAB 15</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-violet-600 transition-colors leading-tight">Lab 15 : วงจรอิเล็กทรอนิกส์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Electronic Circuit Sandbox</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-violet-600 transition-colors line-clamp-1">วงจรอิเล็กทรอนิกส์</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Electronics</p>
                 </div>
             </a>
 
             <!-- Lab 16 -->
-            <a href="https://ailab16.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-orange-500/20 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-orange-600 to-red-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-solar-panel text-5xl mb-3 text-yellow-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-yellow-200 font-medium">RENEWABLE</span>
-                    </div>
+            <a href="https://ailab16.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-orange-600 to-red-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-solar-panel text-2xl sm:text-3xl text-yellow-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-yellow-200 font-medium">LAB 16</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-orange-600 transition-colors leading-tight">Lab 16 : วงจรโซล่าเซลล์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Solar Sandbox</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-orange-600 transition-colors line-clamp-1">วงจรโซล่าเซลล์</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Solar Sandbox</p>
                 </div>
             </a>
 
             <!-- Lab 17 -->
-            <a href="https://ailab17.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-emerald-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-emerald-600 to-teal-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-flask-vial text-5xl mb-3 text-emerald-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-emerald-100 font-medium">CHEMISTRY</span>
-                    </div>
+            <a href="https://ailab17.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-emerald-600 to-teal-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-flask-vial text-2xl sm:text-3xl text-emerald-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-emerald-100 font-medium">LAB 17</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors leading-tight">Lab 17 : ปฏิกิริยาทางเคมี</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Chem Reaction</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors line-clamp-1">ปฏิกิริยาเคมี</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Chem Reaction</p>
                 </div>
             </a>
 
             <!-- Lab 18 -->
-            <a href="https://ailab18.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-amber-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-amber-600 to-orange-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-scale-balanced text-5xl mb-3 text-amber-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-amber-100 font-medium">LAW OF MASS</span>
-                    </div>
+            <a href="https://ailab18.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-amber-600 to-orange-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-scale-balanced text-2xl sm:text-3xl text-amber-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-amber-100 font-medium">LAB 18</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-amber-600 transition-colors leading-tight">Lab 18 : กฎทรงมวล</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Antoine-Laurent de Lavoisier</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-amber-600 transition-colors line-clamp-1">กฎทรงมวล</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Mass Law</p>
                 </div>
             </a>
 
             <!-- Lab 19 -->
-            <a href="https://ailab19-five.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-blue-400/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-blue-500 to-cyan-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-droplet text-5xl mb-3 text-cyan-200 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-cyan-100 font-medium">H2O</span>
-                    </div>
+            <a href="https://ailab19-five.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-blue-500 to-cyan-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-droplet text-2xl sm:text-3xl text-cyan-200 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-cyan-100 font-medium">LAB 19</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-blue-500 transition-colors leading-tight">Lab 19 : เรื่องของน้ำ</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Water</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-blue-500 transition-colors line-clamp-1">เรื่องของน้ำ</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Water</p>
                 </div>
             </a>
 
             <!-- Lab 20 -->
-            <a href="https://ailab20.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-indigo-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-indigo-600 to-purple-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-table-cells text-5xl mb-3 text-indigo-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-indigo-100 font-medium">PERIODIC TABLE</span>
-                    </div>
+            <a href="https://ailab20.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-indigo-600 to-purple-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-table-cells text-2xl sm:text-3xl text-indigo-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-indigo-100 font-medium">LAB 20</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors leading-tight">Lab 20 : ธาตุหมู่ A ในตารางธาตุ</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Group A Elements</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors line-clamp-1">ธาตุหมู่ A</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Periodic Table</p>
                 </div>
             </a>
 
             <!-- Lab 21 -->
-            <a href="https://ailab21.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-red-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-red-600 to-rose-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-balance-scale-right text-5xl mb-3 text-red-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-red-100 font-medium">BALANCER</span>
-                    </div>
+            <a href="https://ailab21.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-red-600 to-rose-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-balance-scale-right text-2xl sm:text-3xl text-red-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-red-100 font-medium">LAB 21</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-red-600 transition-colors leading-tight">Lab 21 : ดุลสมการเคมี</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Chemical Equation Balancer</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-red-600 transition-colors line-clamp-1">ดุลสมการเคมี</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Balancer</p>
                 </div>
             </a>
 
             <!-- Lab 22 -->
-            <a href="https://ailab22.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-fuchsia-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-fuchsia-600 to-purple-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-link text-5xl mb-3 text-fuchsia-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-fuchsia-100 font-medium">POLYMERS</span>
-                    </div>
+            <a href="https://ailab22.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-fuchsia-600 to-purple-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-link text-2xl sm:text-3xl text-fuchsia-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-fuchsia-100 font-medium">LAB 22</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-fuchsia-600 transition-colors leading-tight">Lab 22 : พอลิเมอร์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Polymers</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-fuchsia-600 transition-colors line-clamp-1">พอลิเมอร์</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Polymers</p>
                 </div>
             </a>
 
             <!-- Lab 23 -->
-            <a href="https://ailab23.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-teal-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-teal-600 to-emerald-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-gem text-5xl mb-3 text-teal-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-teal-100 font-medium">MATERIALS</span>
-                    </div>
+            <a href="https://ailab23.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-teal-600 to-emerald-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-gem text-2xl sm:text-3xl text-teal-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-teal-100 font-medium">LAB 23</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-teal-600 transition-colors leading-tight">Lab 23 : สำรวจโลกวัสดุในชีวิตประจำวัน</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Daily Life Materials</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-teal-600 transition-colors line-clamp-1">โลกวัสดุ</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Materials</p>
                 </div>
             </a>
 
             <!-- Lab 24 -->
-            <a href="https://ailab24.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-sky-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-sky-600 to-blue-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-atom text-5xl mb-3 text-sky-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-sky-100 font-medium">MOLECULES</span>
-                    </div>
+            <a href="https://ailab24.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-sky-600 to-blue-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-atom text-2xl sm:text-3xl text-sky-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-sky-100 font-medium">LAB 24</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-sky-600 transition-colors leading-tight">Lab 24 : 3D Molecular Builder</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Molecular Builder</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-sky-600 transition-colors line-clamp-1">สร้างโมเลกุล 3D</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Molecular</p>
                 </div>
             </a>
 
             <!-- Lab 25 -->
-            <a href="https://ailab25.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-green-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-green-600 to-emerald-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-earth-americas text-5xl mb-3 text-green-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-green-100 font-medium">ECOSYSTEM</span>
-                    </div>
+            <a href="https://ailab25.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-green-600 to-emerald-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-earth-americas text-2xl sm:text-3xl text-green-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-green-100 font-medium">LAB 25</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-green-600 transition-colors leading-tight">Lab 25 : องค์ประกอบของระบบนิเวศ</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Ecosystem Components</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-green-600 transition-colors line-clamp-1">ระบบนิเวศ</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Ecosystem</p>
                 </div>
             </a>
 
             <!-- Lab 26 -->
-            <a href="https://ailab26.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-orange-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-orange-600 to-amber-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-network-wired text-5xl mb-3 text-orange-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-orange-100 font-medium">FOOD WEB</span>
-                    </div>
+            <a href="https://ailab26.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-orange-600 to-amber-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-network-wired text-2xl sm:text-3xl text-orange-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-orange-100 font-medium">LAB 26</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-orange-600 transition-colors leading-tight">Lab 26 : สายใยอาหาร</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Food Web</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-orange-600 transition-colors line-clamp-1">สายใยอาหาร</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Food Web</p>
                 </div>
             </a>
 
             <!-- Lab 27 -->
-            <a href="https://ailab27.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-cyan-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-cyan-600 to-sky-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-fish text-5xl mb-3 text-cyan-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-cyan-100 font-medium">FOOD CHAIN</span>
-                    </div>
+            <a href="https://ailab27.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-cyan-600 to-sky-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-fish text-2xl sm:text-3xl text-cyan-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-cyan-100 font-medium">LAB 27</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-cyan-600 transition-colors leading-tight">Lab 27 : ห่วงโซ่อาหาร</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Food Chain</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-cyan-600 transition-colors line-clamp-1">ห่วงโซ่อาหาร</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Food Chain</p>
                 </div>
             </a>
 
             <!-- Lab 28 -->
-            <a href="https://ailab28.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-rose-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-rose-600 to-pink-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-handshake text-5xl mb-3 text-rose-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-rose-100 font-medium">SYMBIOSIS</span>
-                    </div>
+            <a href="https://ailab28.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-rose-600 to-pink-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-handshake text-2xl sm:text-3xl text-rose-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-rose-100 font-medium">LAB 28</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-rose-600 transition-colors leading-tight">Lab 28 : ความสัมพันธ์ของสิ่งมีชีวิต</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Symbiotic Relationships</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-rose-600 transition-colors line-clamp-1">ความสัมพันธ์</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Symbiosis</p>
                 </div>
             </a>
 
             <!-- Lab 29 -->
-            <a href="https://ailab29.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-lime-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-lime-600 to-green-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-pagelines text-5xl mb-3 text-lime-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-lime-100 font-medium">BIODIVERSITY</span>
-                    </div>
+            <a href="https://ailab29.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-lime-600 to-green-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-pagelines text-2xl sm:text-3xl text-lime-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-lime-100 font-medium">LAB 29</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-lime-600 transition-colors leading-tight">Lab 29 : ความหลากหลายทางชีวภาพ</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Biodiversity</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-lime-600 transition-colors line-clamp-1">ความหลากหลาย</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Biodiversity</p>
                 </div>
             </a>
 
             <!-- Lab 30 -->
-            <a href="https://ailab30.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-indigo-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-indigo-500 to-blue-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-sitemap text-5xl mb-3 text-indigo-200 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-indigo-100 font-medium">TAXONOMY</span>
-                    </div>
+            <a href="https://ailab30.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-indigo-500 to-blue-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-sitemap text-2xl sm:text-3xl text-indigo-200 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-indigo-100 font-medium">LAB 30</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors leading-tight">Lab 30 : อนุกรมวิธาน (Taxonomy)</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Taxonomy</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors line-clamp-1">อนุกรมวิธาน</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Taxonomy</p>
                 </div>
             </a>
 
             <!-- Lab 31 -->
-            <a href="https://ailab31.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-purple-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-purple-600 to-fuchsia-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-biohazard text-5xl mb-3 text-purple-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-purple-100 font-medium">TOXICITY</span>
-                    </div>
+            <a href="https://ailab31.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-purple-600 to-fuchsia-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-biohazard text-2xl sm:text-3xl text-purple-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-purple-100 font-medium">LAB 31</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-purple-600 transition-colors leading-tight">Lab 31 : สารพิษสะสม</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Bioaccumulation</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-purple-600 transition-colors line-clamp-1">สารพิษสะสม</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Toxicity</p>
                 </div>
             </a>
 
             <!-- Lab 32 -->
-            <a href="https://ailab32.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-emerald-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-emerald-600 to-teal-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-seedling text-5xl mb-3 text-emerald-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-emerald-100 font-medium">NATURE</span>
-                    </div>
+            <a href="https://ailab32.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-emerald-600 to-teal-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-seedling text-2xl sm:text-3xl text-emerald-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-emerald-100 font-medium">LAB 32</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors leading-tight">Lab 32 : สรรพสิ่งล้วนพันเกี่ยว</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Interconnected Nature</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-emerald-600 transition-colors line-clamp-1">สรรพสิ่งพันเกี่ยว</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Nature</p>
                 </div>
             </a>
 
             <!-- Lab 33 -->
-            <a href="https://ailab33.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-blue-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-blue-600 to-sky-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-water text-5xl mb-3 text-blue-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-blue-100 font-medium">WAVES</span>
-                    </div>
+            <a href="https://ailab33.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-blue-600 to-sky-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-water text-2xl sm:text-3xl text-blue-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-blue-100 font-medium">LAB 33</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors leading-tight">Lab 33 : กำเนิดคลื่น</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Wave Origin</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1">กำเนิดคลื่น</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Wave Origin</p>
                 </div>
             </a>
 
             <!-- Lab 34 -->
-            <a href="https://ailab34.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-cyan-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-cyan-600 to-blue-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-wave-square text-5xl mb-3 text-cyan-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-cyan-100 font-medium">WAVE TYPES</span>
-                    </div>
+            <a href="https://ailab34.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-cyan-600 to-blue-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-wave-square text-2xl sm:text-3xl text-cyan-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-cyan-100 font-medium">LAB 34</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-cyan-600 transition-colors leading-tight">Lab 34 : ชนิดและองค์ประกอบของคลื่น</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Wave Types & Components</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-cyan-600 transition-colors line-clamp-1">ชนิดคลื่น</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Wave Types</p>
                 </div>
             </a>
 
             <!-- Lab 35 -->
-            <a href="https://ailab35.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-yellow-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-yellow-500 to-amber-800 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-lightbulb text-5xl mb-3 text-yellow-200 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-yellow-100 font-medium">LIGHT</span>
-                    </div>
+            <a href="https://ailab35.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-yellow-500 to-amber-800 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-lightbulb text-2xl sm:text-3xl text-yellow-200 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-yellow-100 font-medium">LAB 35</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-yellow-600 transition-colors leading-tight">Lab 35 : การหักเหของแสง</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Light Refraction</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-yellow-600 transition-colors line-clamp-1">การหักเหแสง</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Refraction</p>
                 </div>
             </a>
 
             <!-- Lab 36 -->
-            <a href="https://ailab36.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-purple-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-purple-600 to-indigo-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-satellite-dish text-5xl mb-3 text-purple-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-purple-100 font-medium">EM WAVES</span>
-                    </div>
+            <a href="https://ailab36.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-purple-600 to-indigo-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-satellite-dish text-2xl sm:text-3xl text-purple-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-purple-100 font-medium">LAB 36</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-purple-600 transition-colors leading-tight">Lab 36 : คลื่นแม่เหล็กไฟฟ้า</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Electromagnetic Waves</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-purple-600 transition-colors line-clamp-1">คลื่นแม่เหล็กไฟฟ้า</h3>
+                    <p class="text-[9px] text-slate-400 truncate">EM Waves</p>
                 </div>
             </a>
 
             <!-- Lab 37 -->
-            <a href="https://ailab37.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-sky-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-sky-500 to-cyan-800 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-glasses text-5xl mb-3 text-sky-200 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-sky-100 font-medium">OPTICS</span>
-                    </div>
+            <a href="https://ailab37.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-sky-500 to-cyan-800 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-glasses text-2xl sm:text-3xl text-sky-200 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-sky-100 font-medium">LAB 37</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-sky-600 transition-colors leading-tight">Lab 37 : ภาพจากกระจกและเลนส์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Images from Mirrors & Lenses</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-sky-600 transition-colors line-clamp-1">ภาพกระจกเลนส์</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Optics</p>
                 </div>
             </a>
 
             <!-- Lab 38 -->
-            <a href="https://ailab38.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-teal-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-teal-500 to-emerald-800 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-arrows-split-up-and-left text-5xl mb-3 text-teal-200 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-teal-100 font-medium">REFLECTION</span>
-                    </div>
+            <a href="https://ailab38.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-teal-500 to-emerald-800 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-arrows-split-up-and-left text-2xl sm:text-3xl text-teal-200 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-teal-100 font-medium">LAB 38</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-teal-600 transition-colors leading-tight">Lab 38 : การสะท้อนและการหักเห</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Reflection and Refraction</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-teal-600 transition-colors line-clamp-1">สะท้อนหักเห</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Reflection</p>
                 </div>
             </a>
 
             <!-- Lab 39 -->
-            <a href="https://ailab39.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-indigo-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-indigo-500 to-blue-800 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-square-root-variable text-5xl mb-3 text-indigo-200 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-indigo-100 font-medium">SNELL'S LAW</span>
-                    </div>
+            <a href="https://ailab39.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-indigo-500 to-blue-800 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-square-root-variable text-2xl sm:text-3xl text-indigo-200 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-indigo-100 font-medium">LAB 39</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors leading-tight">Lab 39 : กฏของสเนล</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Snell's Law</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-indigo-600 transition-colors line-clamp-1">กฎของสเนล</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Snell's Law</p>
                 </div>
             </a>
 
             <!-- Lab 40 -->
-            <a href="https://ailab40.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-rose-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-rose-500 to-red-800 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-camera-retro text-5xl mb-3 text-rose-200 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-rose-100 font-medium">PHOTONICS</span>
-                    </div>
+            <a href="https://ailab40.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-rose-500 to-red-800 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-camera-retro text-2xl sm:text-3xl text-rose-200 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-rose-100 font-medium">LAB 40</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-rose-600 transition-colors leading-tight">Lab 40 : ปรากฏการณ์แสงและเทคโนโลยี</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Optical Phenomena & Tech</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-rose-600 transition-colors line-clamp-1">ปรากฏการณ์แสง</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Photonics</p>
                 </div>
             </a>
 
             <!-- Lab 41 -->
-            <a href="https://ailab41.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-orange-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-orange-500 to-amber-800 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-sun text-5xl mb-3 text-orange-200 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-orange-100 font-medium">SOLAR SYSTEM</span>
-                    </div>
+            <a href="https://ailab41.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-orange-500 to-amber-800 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-sun text-2xl sm:text-3xl text-orange-200 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-orange-100 font-medium">LAB 41</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-orange-600 transition-colors leading-tight">Lab 41 : ระบบสุริยะ</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Solar System</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-orange-600 transition-colors line-clamp-1">ระบบสุริยะ</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Solar System</p>
                 </div>
             </a>
 
             <!-- Lab 42 -->
-            <a href="https://ailab42.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-slate-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-slate-800 to-gray-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-meteor text-5xl mb-3 text-slate-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-slate-200 font-medium">DEEP SPACE</span>
-                    </div>
+            <a href="https://ailab42.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-slate-800 to-gray-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-meteor text-2xl sm:text-3xl text-slate-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-slate-200 font-medium">LAB 42</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-slate-700 transition-colors leading-tight">Lab 42 : ห้วงอวกาศ</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Deep Space</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-slate-700 transition-colors line-clamp-1">ห้วงอวกาศ</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Deep Space</p>
                 </div>
             </a>
 
             <!-- Lab 43 -->
-            <a href="https://ailab43.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-indigo-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-indigo-800 to-slate-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-moon text-5xl mb-3 text-indigo-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-indigo-200 font-medium">PHENOMENA</span>
-                    </div>
+            <a href="https://ailab43.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-indigo-800 to-slate-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-moon text-2xl sm:text-3xl text-indigo-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-indigo-200 font-medium">LAB 43</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors leading-tight">Lab 43 : ปรากฏการณ์ดาราศาสตร์</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Astronomical Phenomena</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-indigo-700 transition-colors line-clamp-1">ปรากฏการณ์ดาราฯ</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Phenomena</p>
                 </div>
             </a>
 
             <!-- Lab 44 -->
-            <a href="https://ailab44.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-yellow-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-blue-900 to-indigo-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-star text-5xl mb-3 text-yellow-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-yellow-200 font-medium">STARS</span>
-                    </div>
+            <a href="https://ailab44.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-blue-900 to-indigo-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-star text-2xl sm:text-3xl text-yellow-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-yellow-200 font-medium">LAB 44</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-yellow-600 transition-colors leading-tight">Lab 44 : ดวงดาวบนท้องฟ้า</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Stars in the Sky</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-yellow-600 transition-colors line-clamp-1">ดวงดาวบนฟ้า</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Stars</p>
                 </div>
             </a>
 
             <!-- Lab 45 -->
-            <a href="https://ailab45.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-cyan-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-cyan-900 to-blue-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-signs-post text-5xl mb-3 text-cyan-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-cyan-200 font-medium">CONSTELLATIONS</span>
-                    </div>
+            <a href="https://ailab45.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-cyan-900 to-blue-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-signs-post text-2xl sm:text-3xl text-cyan-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-cyan-200 font-medium">LAB 45</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-cyan-700 transition-colors leading-tight">Lab 45 : กลุ่มดาว</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Constellations</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-cyan-700 transition-colors line-clamp-1">กลุ่มดาว</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Constellations</p>
                 </div>
             </a>
 
             <!-- Lab 46 -->
-            <a href="https://ailab46.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-emerald-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-emerald-800 to-teal-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-compass text-5xl mb-3 text-emerald-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-emerald-200 font-medium">NAVIGATION</span>
-                    </div>
+            <a href="https://ailab46.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-emerald-800 to-teal-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-compass text-2xl sm:text-3xl text-emerald-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-emerald-200 font-medium">LAB 46</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-emerald-700 transition-colors leading-tight">Lab 46 : มุมทิศมุมเงย</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Altitude and Azimuth</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-emerald-700 transition-colors line-clamp-1">มุมทิศมุมเงย</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Navigation</p>
                 </div>
             </a>
 
             <!-- Lab 47 -->
-            <a href="https://ailab47.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-red-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-red-800 to-rose-950 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-rocket text-5xl mb-3 text-red-400 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-red-200 font-medium">SPACE TECH</span>
-                    </div>
+            <a href="https://ailab47.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-red-800 to-rose-950 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-rocket text-2xl sm:text-3xl text-red-400 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-red-200 font-medium">LAB 47</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-red-600 transition-colors leading-tight">Lab 47 : เทคโนโลยีอวกาศ</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Space Technology</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-red-600 transition-colors line-clamp-1">เทคโนโลยีอวกาศ</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Space Tech</p>
                 </div>
             </a>
 
             <!-- Lab 48 -->
-            <a href="https://ailab48.vercel.app" target="_blank" class="group flex flex-col items-center">
-                <div class="w-full bg-slate-900 rounded-[2rem] p-3 shadow-lg transform transition-all duration-300 group-hover:-translate-y-2 group-hover:shadow-2xl group-hover:shadow-blue-500/30 border border-slate-800 relative">
-                    <div class="absolute top-1.5 left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 rounded-full bg-slate-700"></div>
-                    <div class="w-full aspect-video bg-gradient-to-br from-blue-700 to-indigo-900 rounded-[1.25rem] overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50 mt-2">
-                        <i class="fa-solid fa-satellite text-5xl mb-3 text-blue-300 drop-shadow-lg group-hover:scale-110 transition-transform duration-300"></i>
-                        <span class="px-3 py-1 bg-white/10 backdrop-blur-md rounded-full text-[10px] tracking-wider text-blue-200 font-medium">ORBIT</span>
-                    </div>
+            <a href="https://ailab48.vercel.app" target="_blank" class="group flex flex-col items-center bg-white p-2.5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-all duration-200 hover:-translate-y-1">
+                <div class="w-full aspect-[4/3] bg-gradient-to-br from-blue-700 to-indigo-900 rounded-xl overflow-hidden flex flex-col items-center justify-center relative border border-slate-700/50">
+                    <i class="fa-solid fa-satellite text-2xl sm:text-3xl text-blue-300 group-hover:scale-110 transition-transform duration-200"></i>
+                    <span class="absolute bottom-1 px-2 py-0.5 bg-black/40 backdrop-blur-xs rounded-md text-[8px] tracking-wider text-blue-200 font-medium">LAB 48</span>
                 </div>
-                <div class="mt-4 px-2 text-center w-full">
-                    <h3 class="text-[15px] font-semibold text-slate-800 group-hover:text-blue-600 transition-colors leading-tight">Lab 48 : ดาวเทียม</h3>
-                    <p class="text-[12px] text-slate-500 mt-1">Satellites</p>
+                <div class="mt-2 text-center w-full">
+                    <h3 class="text-[11px] sm:text-xs font-semibold text-slate-800 group-hover:text-blue-600 transition-colors line-clamp-1">ดาวเทียม</h3>
+                    <p class="text-[9px] text-slate-400 truncate">Satellites</p>
                 </div>
             </a>
 
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-slate-900 border-t-[4px] border-yellow-500 py-6 relative z-10">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-slate-400 text-sm">© 2024 Ai Lab Dashboard. All rights reserved.</p>
-            <p class="text-slate-500 text-xs mt-1">Muangphayalae Wittaya School | Developed by Mr. Metawat Phongsaphang</p>
+    <footer class="bg-slate-900 border-t-4 border-yellow-500 py-4 relative z-10 text-center">
+        <div class="max-w-7xl mx-auto px-3">
+            <p class="text-slate-400 text-xs">© 2024 Ai Lab Dashboard. All rights reserved.</p>
+            <p class="text-slate-500 text-[10px] mt-0.5">Muangphayalae Wittaya School | Developed by Mr. Metawat Phongsaphang</p>
         </div>
     </footer>
 
-    <!-- Background Animation Scripts -->
     <script>
         document.addEventListener("DOMContentLoaded", () => {
-            // Generate Stars
             const starsContainer = document.getElementById('stars-container');
-            for (let i = 0; i < 70; i++) {
+            for (let i = 0; i < 50; i++) {
                 const star = document.createElement('div');
                 star.className = 'star';
-                star.style.width = Math.random() * 3 + 'px';
+                star.style.width = Math.random() * 2.5 + 'px';
                 star.style.height = star.style.width;
                 star.style.left = Math.random() * 100 + 'vw';
                 star.style.top = Math.random() * 100 + 'vh';
@@ -974,12 +772,11 @@
                 starsContainer.appendChild(star);
             }
 
-            // Generate Snowflakes
             const snowContainer = document.getElementById('snow-container');
-            for (let i = 0; i < 40; i++) {
+            for (let i = 0; i < 25; i++) {
                 const flake = document.createElement('div');
                 flake.className = 'snowflake';
-                flake.style.width = Math.random() * 4 + 2 + 'px';
+                flake.style.width = Math.random() * 3 + 2 + 'px';
                 flake.style.height = flake.style.width;
                 flake.style.left = Math.random() * 100 + 'vw';
                 flake.style.top = -10 + 'vh';
@@ -988,26 +785,17 @@
                 snowContainer.appendChild(flake);
             }
 
-            // Generate Shooting Stars
             const shootingStarsContainer = document.getElementById('shooting-stars-container');
             function createShootingStar() {
                 const star = document.createElement('div');
                 star.className = 'shooting-star';
-                // Random position from right side of screen
                 star.style.left = (Math.random() * 50 + 50) + 'vw'; 
                 star.style.top = (Math.random() * 50 - 20) + 'vh';
                 star.style.setProperty('--duration', (Math.random() * 2 + 1) + 's');
-                
                 shootingStarsContainer.appendChild(star);
-                
-                // Remove element after animation finishes
-                setTimeout(() => {
-                    star.remove();
-                }, 3000);
+                setTimeout(() => { star.remove(); }, 3000);
             }
-            
-            // Create shooting stars at random intervals
-            setInterval(createShootingStar, 4000);
+            setInterval(createShootingStar, 5000);
         });
     </script>
 </body>
